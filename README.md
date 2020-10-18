@@ -10,13 +10,10 @@ Comes with the following:
 ## Configuration
 
 ### Setup
-1. Create a `.env` file with the following:
-```
-SKIP_PREFLIGHT_CHECK=true
-```
+1. Create a `.env` file with the following `SKIP_PREFLIGHT_CHECK=true`.
 This is not necessary if you will not be using react-scripts.
-2. To configure pre-commit hooks: `npx mrm lint-staged`
-3. Install your favorite UI framework, i.e. `yarn add material-ui`
-4. Determine your client-side state management library.
-5. Start building!
-6. Manual linting with `yarn pre-lint` and `yarn lint`.
+2. Install your favorite UI framework, i.e. `yarn add material-ui`
+3. Determine your client-side state management library.
+4. Start building!
+5. Manual linting with `yarn pre-lint` and `yarn lint`.
+6. To configure pre-commit hooks run `npx husky install`.
