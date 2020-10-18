@@ -1,66 +1,22 @@
-# eslint-config
-Guide to quickly configure eslint.
+# react-typescript-bootstrap
+Bootstrap template for non-static React TypeScript projects.
 
-## Steps
-1. https://eslint.org/docs/user-guide/getting-started
-```
-npm install eslint --save-dev
-"./node_modules/.bin/eslint" --init
-``` 
-* Select the following:
-```
-How would you like to use ESLint?
-> To check syntax, find problems, and enforce code style
-What type of modules does your project use?
-> JavaScript modules (import/export)
-Which framework does your project use?
-> React
-  Vue.js
-  None of the above
-Does your project use TypeScript? (y/N)
-> N
-Where does your code run? (Press <space> to select, <a> to toggle all, <i> to invert selection)
->(*) Browser
- ( ) Node
-How would you like to define a style for your project?
-> Use a popular style guide
-Which style guide do you want to follow?
-> Airbnb (https://github.com/airbnb/javascript)
-What format do you want your config file to be in?
-> Javascript
-  YAML
-  JSON
-Would you like to install them now with npm? (Y/n)
-> Y
-```
-2. Add the following scripts to package.json:
+Comes with the following:
+* `.editorconfig` file to enforce file formatting.
+* [eslint](https://www.npmjs.com/package/eslint), [prettier](https://www.npmjs.com/package/prettier), and [husky](https://www.npmjs.com/package/husky)+[lint-staged](https://www.npmjs.com/package/lint-staged) for linting and pre-commit hooks.
+    - Customize `.eslintrc.js`, `prettierrc.js`, `tsconfig.json`, `package.json`
+* [docker-compose](https://docs.docker.com/compose/)
 
-```
-"scripts": {
-  "pretest": "eslint --ignore-path .gitignore .",
-  "lint": "eslint --fix --ignore-path .gitignore . ",
-  ...
-}
-```
-3. Run the scripts
-```
-# Show errors and warnings
-npm run pretest
+## Configuration
 
-# Show and fix errors and warnings
-npm run lint
+### Setup
+1. Create a `.env` file with the following:
 ```
-4. (Optional) Install prop-types or turn off rule
+SKIP_PREFLIGHT_CHECK=true
 ```
-npm install --save prop-types
-```
-or
-> Add to .js file: ```/* eslint react/prop-types: 0 */```
-
-or
-> Add to eslint config:
-```
-"rules": {
-  "react/prop-types": 0
-}
-```
+This is not necessary if you will not be using react-scripts.
+2. To configure pre-commit hooks: `npx mrm lint-staged`
+3. Install your favorite UI framework, i.e. `yarn add material-ui`
+4. Determine your client-side state management library.
+5. Start building!
+6. Manual linting with `yarn pre-lint` and `yarn lint`.
